@@ -27,6 +27,7 @@ jobs:
 
     env:
       NODE_ENV: test
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/forumapi_test
       PGHOST: localhost
       PGUSER: postgres
       PGDATABASE: forumapi_test
@@ -53,7 +54,7 @@ jobs:
         run: npm run lint
 
       - name: Run database migrations
-        run: npm run migrate
+        run: npx node-pg-migrate up
 
       - name: Run tests
         run: npm test

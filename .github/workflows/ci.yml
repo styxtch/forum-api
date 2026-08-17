@@ -54,7 +54,7 @@ jobs:
         run: npm run lint
 
       - name: Run database migrations
-        run: node-pg-migrate up
+        run: npx node-pg-migrate up
 
       - name: Run tests
         run: npm test
